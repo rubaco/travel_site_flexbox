@@ -4,6 +4,8 @@ and use @import to include in this style sheet. The font in the image is "Banger
 */
 
 
+@import url('https://fonts.googleapis.com/css?family=Just+Another+Hand|Sedgwick+Ave+Display');
+
 /*
 - make the masthead a flexbox container
 - make sure the logo displays on the left and the navigation displays on the right using flexbox
@@ -12,6 +14,18 @@ and use @import to include in this style sheet. The font in the image is "Banger
 - using the position property, make sure the navigation stays fixed to the top when scrolling
 - when scrolling make sure there is no gap between the masthead and top of the page
 */
+
+#masthead{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  position: fixed;
+  top: 0%;
+
+
+}
+
 
 
 /*
@@ -24,6 +38,16 @@ and use @import to include in this style sheet. The font in the image is "Banger
 - adjust the top margin of the hero to account for the fixed masthead
 */
 
+#hero{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  margin-top: 75px;
+  font-family: 'Sedgwick Ave Display';
+  text-shadow: 2px 2px 2px black;
+}
+
 
 /*
 - Make the cards div a flexbox container
@@ -31,6 +55,13 @@ and use @import to include in this style sheet. The font in the image is "Banger
 - reverse the order of the cards using flexbox (should become chili aruna italy spain)
 - make sure when the page shrinks the cards wrap and stack on eachother
 */
+
+#cards{
+  display: flex;
+  align-content: center;
+  flex-flow: row-reverse;
+  flex-wrap: wrap;
+}
 
 
 /*
@@ -41,6 +72,13 @@ and use @import to include in this style sheet. The font in the image is "Banger
   (there is bottom padding applied in common.css to keep it off the very bottom so it looks right)
 */
 
+.card{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content:flex-end;
+
+}
 
 /*
 - Make the travel table div a flexbox container
@@ -48,6 +86,11 @@ and use @import to include in this style sheet. The font in the image is "Banger
 - make sure the content is centered in each card using flexbox
 */
 
+#travel-table{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
 
 /*
 - Make the footer div a flexbox container
@@ -55,13 +98,36 @@ and use @import to include in this style sheet. The font in the image is "Banger
 - make sure the content is vertically centered in the here div using flexbox
 */
 
+#footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 
 /*
 MEDIUM CHALLENGE:
-Using media queries, hide the national bird column in the table when the screen is at a 
+Using media queries, hide the national bird column in the table when the screen is at a
 max width of 800px. Hide both the national bird and population column when the
 screen is at a max width of 600px
 
 HINT:
-leverage the classes .bird and .population 
+leverage the classes .bird and .population
 */
+
+@media screen and (max-width: 800x){
+    .bird{
+      display: none;
+    }
+
+@media screen and (max-width: 800px){
+      .population{
+          display: none;
+        }
+
+
+
+
+
+
+}
